@@ -123,6 +123,19 @@ vim.o.number = true
 vim.opt.exrc   = true
 vim.opt.secure = true
 
+-- == Global config ============================================================
+
+-- Set indentation for JSON, YAML, and TOML files to 2 spaces.
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "json", "jsonc", "yaml", "toml" },
+  callback = function()
+    vim.bo.expandtab = true
+    vim.bo.shiftwidth = 2
+    vim.bo.tabstop = 2
+    vim.bo.softtabstop = 2
+  end,
+})
+
 -- == Keymaps ==================================================================
 
 local map = function(mode, lhs, rhs, opts)
