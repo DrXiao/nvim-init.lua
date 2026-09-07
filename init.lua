@@ -111,6 +111,16 @@ require('packer').startup(function(use)
   }
 
   use 'nvim-tree/nvim-web-devicons'
+
+  use {
+    'DrXiao/nvim-enpfr',
+    config = function()
+      require("enpfr").setup({
+        keymap = "<F8>",
+	config_keymap = "<F9>"
+      })
+    end,
+  }
 end)
 
 -- == Options ==================================================================
