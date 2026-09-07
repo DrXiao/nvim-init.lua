@@ -136,9 +136,9 @@ vim.opt.clipboard = "unnamedplus"
 
 -- == Global config ============================================================
 
--- Set indentation for JSON, YAML, and TOML files to 2 spaces.
+-- Set indentation for JSON, YAML, TOML, JavaScript, and TypeScript files to 2 spaces.
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "json", "jsonc", "yaml", "toml" },
+  pattern = { "json", "jsonc", "yaml", "toml", "javascript", "typescript" },
   callback = function()
     vim.bo.expandtab = true
     vim.bo.shiftwidth = 2
